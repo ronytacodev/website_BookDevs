@@ -55,6 +55,5 @@ if($_POST){
         </div>
     </div>
       
-<!-- me quede min 47:15 -->
   </body>
 </html>
