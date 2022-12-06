@@ -1,6 +1,16 @@
 <?php include("../template/cabecera.php"); ?>
 <?php
 
+$txtID=(isset($_POST['txtID']))?$_POST['txtID']:"";
+$txtNombre=(isset($_POST['txtNombre']))?$_POST['txtNombre']:"";
+$txtImagen=(isset($_FILES['txtImagen']['name']))?$_FILES['txtImagen']['name']:"";
+$accion=(isset($_POST['accion']))?$_POST['accion']:"";
+
+echo $txtID."<br>";
+echo $txtNombre."<br>";
+echo $txtImagen."<br>";
+echo $accion."<br>";
+
 ?>
 
 <div class="col-md-5">
