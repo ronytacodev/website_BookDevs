@@ -1,4 +1,9 @@
 <?php include("../template/cabecera.php"); ?>
+<?php
+    print_r($_POST);
+
+    print_r($_FILES);
+?>
 
 <div class="col-md-5">
 
@@ -22,14 +27,14 @@
                 </div>
 
                 <div class = "form-group">
-                    <label for="imagen">Imagen:</label>
-                    <input type="file" class="form-control" name="imagen" id="imagen" placeholder="Selecciona la imagen">
+                    <label for="txtImagen">Imagen:</label>
+                    <input type="file" class="form-control" name="txtImagen" id="txtImagen" placeholder="Selecciona la imagen">
                 </div>
 
                 <div class="btn-group" role="group" aria-label="">
-                    <button type="button" class="btn btn-success">Agregar</button>
-                    <button type="button" class="btn btn-warning">Modificar</button>
-                    <button type="button" class="btn btn-info">Cancelar</button>
+                    <button type="submit" name="accion" value="Agregar" class="btn btn-success">Agregar</button>
+                    <button type="submit" name="accion" value="Modificar" class="btn btn-warning">Modificar</button>
+                    <button type="submit" name="accion" value="Cancelar" class="btn btn-info">Cancelar</button>
                 </div>
 
             </form>
