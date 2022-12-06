@@ -11,9 +11,28 @@ echo $txtNombre."<br>";
 echo $txtImagen."<br>";
 echo $accion."<br>";
 
+$host="localhost";
+$bd="sitio";
+$usuario="root";
+$contrasenia="rony123456";
+
+try {
+    $conexion = new PDO("mysql:host=$host;dbname=$bd",$usuario,$contrasenia); 
+    if($conexion) {echo "Conectado ... a sistema";}
+
+} catch (Exception $ex) {
+   
+    echo $ex->getMessage();
+}
+
 switch($accion) {
 
     case "Agregar";
+
+        // INSERT INTO `libros` (`id`, `nombre`, `imagen`) VALUES (NULL, 'Libro de php', 'imagen.jpg');
+        $sentenciaSQL = $conexion->prepare("INSERT INTO `libros` (`id`, `nombre`, `imagen`) VALUES (NULL, 'Libro de php', 'imagen.jpg');");
+        $sentenciaSQL->execute();
+
         echo "Presionado botón Agregar";
         break;
 
@@ -26,6 +45,7 @@ switch($accion) {
         break;
 }
 
+// me quede en el min 1:31:30
 ?>
 
 <div class="col-md-5">
