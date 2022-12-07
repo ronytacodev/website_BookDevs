@@ -28,7 +28,7 @@ switch($accion) {
         break;
     }
 
-    $sentenciaSQL = $conexion->prepare("SELECT * FROM libros ");
+    $sentenciaSQL = $conexion->prepare("SELECT * FROM libros");
     $sentenciaSQL->execute();
     $listalibros = $sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 
@@ -86,17 +86,17 @@ switch($accion) {
             </tr>
         </thead>
         <tbody>
-        <!-- <?php foreach ($listalibros as $libro) { ?>     -->
+        <?php foreach ($listalibros as $libro) { ?>    
             <tr>
-                <!-- <td><?php echo $libro['ïd']; ?></td>
+                <td><?php echo $libro['id']; ?></td>
                 <td><?php echo $libro['nombre']; ?></td>
                 <td><?php echo $libro['imagen']; ?></td>
-                <td>Seleccionar | Borrar</td> -->
+                <td>Seleccionar | Borrar</td>
             </tr>
-         <!-- <?php } ?> -->
+         <?php } ?>
         </tbody>
     </table>
-<!-- me quede en el min 1:51:28 -->
+
 </div>
 
 <?php include("../template/pie.php"); ?>
