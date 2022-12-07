@@ -91,12 +91,23 @@ switch($accion) {
                 <td><?php echo $libro['id']; ?></td>
                 <td><?php echo $libro['nombre']; ?></td>
                 <td><?php echo $libro['imagen']; ?></td>
-                <td>Seleccionar | Borrar</td>
+
+                <td>
+
+                    Seleccionar | Borrar
+
+                    <form method="post">
+                        <input type="text" name="txtID" id="txtID" value="<?php echo $libro['id']; ?>" />
+                        <input type="submit" name="accion" value="Borrar" class="btn btn-danger"/>
+                    </form>
+
+                </td>
+
             </tr>
          <?php } ?>
         </tbody>
     </table>
-
+<!-- me quede en el min 1:54:20 -->
 </div>
 
 <?php include("../template/pie.php"); ?>
