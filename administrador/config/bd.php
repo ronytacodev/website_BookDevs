@@ -1,8 +1,8 @@
 <?php
-    $host="localhost";
+    $host="localhost:33065";
     $bd="sitio";
     $usuario="root";
-    $contrasenia="rony123456";
+    $contrasenia="";
     // $conexion="";
 
     try {

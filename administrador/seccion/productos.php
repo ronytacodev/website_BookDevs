@@ -13,8 +13,8 @@ switch($accion) {
     case "Agregar":
 
         $sentenciaSQL = $conexion->prepare("INSERT INTO libros (nombre, imagen) VALUES (:nombre, :imagen);");
-        $sentenciaSQL->bindParam('nombre', txtNombre);
-        $sentenciaSQL->bindParam('imagen', txtImagen);
+        $sentenciaSQL->bindParam(':nombre', $txtNombre);
+        $sentenciaSQL->bindParam(':imagen', $txtImagen);
         $sentenciaSQL->execute();
 
         break;
@@ -86,17 +86,17 @@ switch($accion) {
             </tr>
         </thead>
         <tbody>
-        <?php foreach ($listalibros as $libro) { ?>    
+        <!-- <?php foreach ($listalibros as $libro) { ?>     -->
             <tr>
-                <td><?php echo $libro['ïd']; ?></td>
+                <!-- <td><?php echo $libro['ïd']; ?></td>
                 <td><?php echo $libro['nombre']; ?></td>
                 <td><?php echo $libro['imagen']; ?></td>
-                <td>Seleccionar | Borrar</td>
+                <td>Seleccionar | Borrar</td> -->
             </tr>
-         <?php } ?>
+         <!-- <?php } ?> -->
         </tbody>
     </table>
-
+<!-- me quede en el min 1:51:28 -->
 </div>
 
 <?php include("../template/pie.php"); ?>
