@@ -26,7 +26,18 @@ switch($accion) {
     case "Cancelar":
         echo "Presionado botón Cancelar";
         break;
-    }
+
+    case "Seleccionar":
+        //echo "Presionado botón Seleccionar";
+        break;
+
+    case "Borrar":
+        $sentenciaSQL = $conexion->prepare("DELETE FROM libros WHERE (id=:id)");
+        $sentenciaSQL->bindParam(':id', $txtID);
+        $sentenciaSQL->execute();
+        //echo "Presionado botón Borrar";
+        break;
+}
 
     $sentenciaSQL = $conexion->prepare("SELECT * FROM libros");
     $sentenciaSQL->execute();
@@ -97,7 +108,8 @@ switch($accion) {
                     Seleccionar | Borrar
 
                     <form method="post">
-                        <input type="text" name="txtID" id="txtID" value="<?php echo $libro['id']; ?>" />
+                        <input type="hidden" name="txtID" id="txtID" value="<?php echo $libro['id']; ?>" />
+                        <input type="submit" name="accion" value="Seleccionar" class="btn btn-primary"/>
                         <input type="submit" name="accion" value="Borrar" class="btn btn-danger"/>
                     </form>
 
@@ -107,7 +119,7 @@ switch($accion) {
          <?php } ?>
         </tbody>
     </table>
-<!-- me quede en el min 1:54:20 -->
+
 </div>
 
 <?php include("../template/pie.php"); ?>
