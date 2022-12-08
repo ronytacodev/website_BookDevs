@@ -22,10 +22,15 @@ switch($accion) {
     case "Modificar":
         $sentenciaSQL = $conexion->prepare("UPDATE libros SET nombre=:nombre WHERE id=:id");
         $sentenciaSQL->bindParam(':nombre', $txtNombre);
-        $sentenciaSQL->bindParam(':Id', $txtID);
+        $sentenciaSQL->bindParam(':id', $txtID);
         $sentenciaSQL->execute();
 
-        echo "Presionado botón Modificar";
+        if($txtImagen!=""){
+            $sentenciaSQL = $conexion->prepare("UPDATE libros SET imagen=:imagen WHERE id=:id");
+            $sentenciaSQL->bindParam(':imagen', $txtImagen);
+            $sentenciaSQL->bindParam(':id', $txtID);
+            $sentenciaSQL->execute();
+        }
         break;
 
     case "Cancelar":
@@ -54,7 +59,7 @@ switch($accion) {
     $sentenciaSQL = $conexion->prepare("SELECT * FROM libros");
     $sentenciaSQL->execute();
     $listalibros = $sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
-// ME QUEDE EN EL MIN 2:06:03
+
 ?>
 
 <div class="col-md-5">
@@ -75,7 +80,7 @@ switch($accion) {
 
                 <div class = "form-group">
                     <label for="txtNombre">Nombre:</label>
-                    <input type="text" class="form-control" value="<?php echo $txtID; ?>" name="txtNombre" id="txtNombre" placeholder="Escribe el nombre del libro">
+                    <input type="text" class="form-control" value="<?php echo $txtNombre; ?>" name="txtNombre" id="txtNombre" placeholder="Escribe el nombre del libro">
                 </div>
 
                 <div class = "form-group">
