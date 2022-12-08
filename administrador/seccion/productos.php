@@ -20,6 +20,11 @@ switch($accion) {
         break;
 
     case "Modificar":
+        $sentenciaSQL = $conexion->prepare("UPDATE libros SET nombre=:nombre WHERE id=:id");
+        $sentenciaSQL->bindParam(':nombre', $txtNombre);
+        $sentenciaSQL->bindParam(':Id', $txtID);
+        $sentenciaSQL->execute();
+
         echo "Presionado botón Modificar";
         break;
 
@@ -49,7 +54,7 @@ switch($accion) {
     $sentenciaSQL = $conexion->prepare("SELECT * FROM libros");
     $sentenciaSQL->execute();
     $listalibros = $sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
-
+// ME QUEDE EN EL MIN 2:06:03
 ?>
 
 <div class="col-md-5">
