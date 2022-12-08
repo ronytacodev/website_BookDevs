@@ -29,10 +29,17 @@ switch($accion) {
 
     case "Seleccionar":
         //echo "Presionado botón Seleccionar";
+        $sentenciaSQL = $conexion->prepare("SELECT * FROM libros WHERE id=:id");
+        $sentenciaSQL->bindParam(':id', $txtID);
+        $sentenciaSQL->execute();
+        $libro = $sentenciaSQL->fetch(PDO::FETCH_LAZY);
+
+        $txtNombre = $libro['nombre'];
+        $txtImagen = $libro['imagen'];
         break;
 
     case "Borrar":
-        $sentenciaSQL = $conexion->prepare("DELETE FROM libros WHERE (id=:id)");
+        $sentenciaSQL = $conexion->prepare("DELETE FROM libros WHERE id=:id");
         $sentenciaSQL->bindParam(':id', $txtID);
         $sentenciaSQL->execute();
         //echo "Presionado botón Borrar";
@@ -58,16 +65,19 @@ switch($accion) {
 
                 <div class = "form-group">
                     <label for="txtID">ID:</label>
-                    <input type="text" class="form-control" name="txtID" id="txtID" placeholder="Escribe el ID">
+                    <input type="text" class="form-control" value="<?php echo $txtID; ?>" name="txtID" id="txtID" placeholder="Escribe el ID">
                 </div>
 
                 <div class = "form-group">
                     <label for="txtNombre">Nombre:</label>
-                    <input type="text" class="form-control" name="txtNombre" id="txtNombre" placeholder="Escribe el nombre del libro">
+                    <input type="text" class="form-control" value="<?php echo $txtID; ?>" name="txtNombre" id="txtNombre" placeholder="Escribe el nombre del libro">
                 </div>
 
                 <div class = "form-group">
                     <label for="txtImagen">Imagen:</label>
+
+                    <?php echo $txtImagen; ?>
+
                     <input type="file" class="form-control" name="txtImagen" id="txtImagen" placeholder="Selecciona la imagen">
                 </div>
 
@@ -104,8 +114,6 @@ switch($accion) {
                 <td><?php echo $libro['imagen']; ?></td>
 
                 <td>
-
-                    Seleccionar | Borrar
 
                     <form method="post">
                         <input type="hidden" name="txtID" id="txtID" value="<?php echo $libro['id']; ?>" />
