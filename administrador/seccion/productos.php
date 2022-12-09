@@ -129,7 +129,13 @@ switch($accion) {
                 <div class = "form-group">
                     <label for="txtImagen">Imagen:</label>
 
-                    <?php echo $txtImagen; ?>
+                    <br/>
+
+                    <?php if($txtImagen!="") { ?>
+
+                        <img class="img-thumbnail rounded" src="../../img/<?php echo $txtImagen;?>" width="50" alt="" srcset="">
+
+                    <?php } ?>
 
                     <input type="file" class="form-control" name="txtImagen" id="txtImagen" placeholder="Selecciona la imagen">
                 </div>
@@ -164,7 +170,11 @@ switch($accion) {
             <tr>
                 <td><?php echo $libro['id']; ?></td>
                 <td><?php echo $libro['nombre']; ?></td>
-                <td><?php echo $libro['imagen']; ?></td>
+                <td>
+
+                    <img class="img-thumbnail rounded" src="../../img/<?php echo $libro['imagen']; ?>" width="50" alt="" srcset="">
+                    
+                </td>
 
                 <td>
 
