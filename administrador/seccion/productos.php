@@ -64,7 +64,7 @@ switch($accion) {
         break;
 
     case "Cancelar":
-        echo "Presionado botón Cancelar";
+
         break;
 
     case "Seleccionar":
@@ -118,12 +118,12 @@ switch($accion) {
 
                 <div class = "form-group">
                     <label for="txtID">ID:</label>
-                    <input type="text" class="form-control" value="<?php echo $txtID; ?>" name="txtID" id="txtID" placeholder="Escribe el ID">
+                    <input type="text" required readonly class="form-control" value="<?php echo $txtID; ?>" name="txtID" id="txtID" placeholder="Escribe el ID">
                 </div>
 
                 <div class = "form-group">
                     <label for="txtNombre">Nombre:</label>
-                    <input type="text" class="form-control" value="<?php echo $txtNombre; ?>" name="txtNombre" id="txtNombre" placeholder="Escribe el nombre del libro">
+                    <input type="text" required class="form-control" value="<?php echo $txtNombre; ?>" name="txtNombre" id="txtNombre" placeholder="Escribe el nombre del libro">
                 </div>
 
                 <div class = "form-group">
@@ -141,9 +141,9 @@ switch($accion) {
                 </div>
 
                 <div class="btn-group" role="group" aria-label="">
-                    <button type="submit" name="accion" value="Agregar" class="btn btn-success">Agregar</button>
-                    <button type="submit" name="accion" value="Modificar" class="btn btn-warning">Modificar</button>
-                    <button type="submit" name="accion" value="Cancelar" class="btn btn-info">Cancelar</button>
+                    <button type="submit" name="accion" <?php echo($accion=="Seleccionar")?"disabled":""; ?> value="Agregar" class="btn btn-success">Agregar</button>
+                    <button type="submit" name="accion" <?php echo($accion!="Seleccionar")?"disabled":""; ?> value="Modificar" class="btn btn-warning">Modificar</button>
+                    <button type="submit" name="accion" <?php echo($accion!="Seleccionar")?"disabled":""; ?> value="Cancelar" class="btn btn-info">Cancelar</button>
                 </div>
 
             </form>
