@@ -25,7 +25,7 @@ switch($accion) {
             move_uploaded_file($tmpImagen, "../../img/".$nombreArchivo);
         }
 
-        $sentenciaSQL->bindParam(':imagen', $txtImagen);
+        $sentenciaSQL->bindParam(':imagen', $nombreArchivo);
         $sentenciaSQL->execute();
 
         break;
@@ -37,8 +37,27 @@ switch($accion) {
         $sentenciaSQL->execute();
 
         if($txtImagen!=""){
+            $fecha= new DateTime();
+            $nombreArchivo=($txtImagen!="")?$fecha->getTimestamp()."_".$_FILES["txtImagen"]["name"]:"imagen.jpg";
+            $tmpImagen=$_FILES["txtImagen"]["tmp_name"];
+
+            move_uploaded_file($tmpImagen, "../../img/".$nombreArchivo);
+
+            $sentenciaSQL = $conexion->prepare("SELECT imagen FROM libros WHERE id=:id");
+            $sentenciaSQL->bindParam(':id', $txtID);
+            $sentenciaSQL->execute();
+            $libro = $sentenciaSQL->fetch(PDO::FETCH_LAZY);
+
+            if(isset($libro["imagen"]) && ($libro["imagen"]!="imagen.jpg")) {
+
+                if(file_exists("../../img/".$libro["imagen"])) {
+
+                    unlink("../../img/".$libro["imagen"]);
+                }
+            }
+
             $sentenciaSQL = $conexion->prepare("UPDATE libros SET imagen=:imagen WHERE id=:id");
-            $sentenciaSQL->bindParam(':imagen', $txtImagen);
+            $sentenciaSQL->bindParam(':imagen', $nombreArchivo);
             $sentenciaSQL->bindParam(':id', $txtID);
             $sentenciaSQL->execute();
         }
@@ -49,7 +68,6 @@ switch($accion) {
         break;
 
     case "Seleccionar":
-        //echo "Presionado botón Seleccionar";
         $sentenciaSQL = $conexion->prepare("SELECT * FROM libros WHERE id=:id");
         $sentenciaSQL->bindParam(':id', $txtID);
         $sentenciaSQL->execute();
@@ -74,7 +92,6 @@ switch($accion) {
             }
         }
 
-// me quede en el min 2:19:49
         $sentenciaSQL = $conexion->prepare("DELETE FROM libros WHERE id=:id");
         $sentenciaSQL->bindParam(':id', $txtID);
         $sentenciaSQL->execute();
