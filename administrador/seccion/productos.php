@@ -75,9 +75,9 @@ switch($accion) {
         }
 
 // me quede en el min 2:19:49
-        // $sentenciaSQL = $conexion->prepare("DELETE FROM libros WHERE id=:id");
-        // $sentenciaSQL->bindParam(':id', $txtID);
-        // $sentenciaSQL->execute();
+        $sentenciaSQL = $conexion->prepare("DELETE FROM libros WHERE id=:id");
+        $sentenciaSQL->bindParam(':id', $txtID);
+        $sentenciaSQL->execute();
 
         break;
 }
