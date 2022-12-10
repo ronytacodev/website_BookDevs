@@ -7,7 +7,7 @@
         if(($_POST['usuario']=="Ronytacodev")&&($_POST['contrasenia']=="developer")) {
 
             $_SESSION['usuario']="ok";
-            $_SESSION['nombreUsuario']="Ronytacodev";
+            $_SESSION['nombreUsuario']="Master Rony";
             header('Location:inicio.php');
         } else {
             $mensaje="Error: EL usuario y/o contraseña son incorrectos.";
