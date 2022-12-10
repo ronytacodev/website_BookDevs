@@ -19,9 +19,10 @@
                 <a name="" id="" class="btn btn-primary" href="https://books.goalkicker.com/" target="_blank" role="button">Ver más</a>
             </div>
         </div>
+        <br/>
     </div>
+    
 
 <?php } ?>
 
-<!-- me quede en el min 3:02:56 -->
 <?php include("template/pie.php");?>
