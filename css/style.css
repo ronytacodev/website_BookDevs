@@ -15,10 +15,26 @@
     font-size: 14px;
 }
 
-.member-details ion-icon {
-    padding: 0 5px;
-    font-size: 22px;
-    color: rgb(14, 1, 1);
+/* FIN SECCION ABOUT US */
+
+/* INICIO SECCION FOOTER */
+#footer {
+    padding: 10px 0px;
+    text-align: center;
+    color: #fff;
 }
 
-/* FIN SECCION ABOUT US */
+#footer a {
+    color: #868e96;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    color: #fff;
+}
+
+#footer .list-inline .list-inline-item {
+    padding: 0px 15px;
+}
+
+/* FIN SECCION FOOTER */
