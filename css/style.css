@@ -7,7 +7,7 @@
 .member-details {
     position: absolute;
     color: #fff;
-    bottom: 0px;
+    bottom: 20px;
     left: 20px;
 }
 
@@ -18,7 +18,7 @@
 .member-details ion-icon {
     padding: 0 5px;
     font-size: 22px;
-    color: #fff;
+    color: rgb(14, 1, 1);
 }
 
 /* FIN SECCION ABOUT US */
