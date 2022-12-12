@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="./img/logo_bookdevs.ico" type="image/x-icon">
     <title>BookDevs</title>
 
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
 </head>
 <body>

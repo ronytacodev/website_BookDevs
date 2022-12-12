@@ -1,0 +1,24 @@
+/* INICIO SECCION ABOUT US */
+.member-container {
+    position: relative;
+    margin: 10px 0;
+}
+
+.member-details {
+    position: absolute;
+    color: #fff;
+    bottom: 0px;
+    left: 20px;
+}
+
+.member-details span {
+    font-size: 14px;
+}
+
+.member-details ion-icon {
+    padding: 0 5px;
+    font-size: 22px;
+    color: #fff;
+}
+
+/* FIN SECCION ABOUT US */
