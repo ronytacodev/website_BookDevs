@@ -7,16 +7,16 @@
     <div class="container">
         <ul class="list-inline">
             <li class="list-inline-item footer-menu">
-                <a href="#hero">Inicio</a>
+                <a href="index.php">Inicio</a>
             </li>
             <li class="list-inline-item footer-menu">
-                <a href="#portfolio">Libros</a>
+                <a href="productos.php">Libros</a>
             </li>
             <li class="list-inline-item footer-menu">
-                <a href="#aboutus">Nosotros</a>
+                <a href="nosotros.php">Nosotros</a>
             </li>
             <li class="list-inline-item footer-menu">
-                <a href="#pricing">Login</a>
+                <a href="administrador/index.php">Login</a>
             </li>
         </ul>
 
