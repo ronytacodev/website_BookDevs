@@ -14,18 +14,13 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <ul class="nav navbar-nav">
-            <li class="nav-item">
-                <img src="./img/logo_bookdevs.ico" width="50">
-            </li>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <li class="nav-item">
-                <a class="nav-link" href="#">BookDevs</a>
-            </li>
-
+            
+        <a class="navbar-brand ps-3 --bs-gray-100" href="#"><img src="./img/logo_bookdevs.ico" width="50" class="logo-brand" alt="logo">BOOKDEVS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <ion-icon name="menu-outline"></ion-icon>
+        </button>
+        <ul class="nav navbar-nav ms-auto pe-4">
             <li class="nav-item">
                 <a class="nav-link" href="index.php">Inicio</a>
             </li>

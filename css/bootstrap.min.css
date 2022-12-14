@@ -4223,7 +4223,7 @@ fieldset:disabled .btn {
     --bs-navbar-active-color: rgba(0, 0, 0, 0.7);
     --bs-navbar-brand-padding-y: 0.3125rem;
     --bs-navbar-brand-margin-end: 1rem;
-    --bs-navbar-brand-font-size: 1.25rem;
+    --bs-navbar-brand-font-size: 1.35rem;
     --bs-navbar-brand-color: rgba(0, 0, 0, 0.7);
     --bs-navbar-brand-hover-color: rgba(0, 0, 0, 0.7);
     --bs-navbar-nav-link-padding-x: 0.5rem;
@@ -4263,7 +4263,9 @@ fieldset:disabled .btn {
     font-size: var(--bs-navbar-brand-font-size);
     color: var(--bs-navbar-brand-color);
     text-decoration: none;
-    white-space: nowrap
+    white-space: nowrap;
+    letter-spacing: .45rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
 .navbar-brand:focus,
