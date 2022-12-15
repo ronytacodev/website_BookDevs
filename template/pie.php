@@ -20,6 +20,34 @@
             </li>
         </ul>
 
+        <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="#">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#">
+                        <ion-icon name="logo-youtube"></ion-icon>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#">
+                        <ion-icon name="logo-dribbble"></ion-icon>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                </li>
+            </ul>
+
         <small>©2022 All Rights Reserved. Created by Rony Taco</small>
     </div>
 </section>
