@@ -64,7 +64,7 @@
                 <button type="submit">Iniciar sesión</button>
             </div>
             <div class="form__group__enlace">
-                <a class="enlace" href="#">¿Olvidaste tu contraseña?</a>
+                <a class="enlace" href="lastpassword.php">¿Olvidaste tu contraseña?</a>
             </div>
         </form>
         <hr>

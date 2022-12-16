@@ -27,6 +27,11 @@ h1 {
     font-size: 38px;
 }
 
+.title_lastpassword {
+    color: #593196;
+    font-size: 30px;
+}
+
 .alert {
     color: #791b1b;
 }
